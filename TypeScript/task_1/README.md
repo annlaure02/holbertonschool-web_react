@@ -1,1 +1,1 @@
-# Creating an interface for a student
+# Let's build a Teacher interface 
