@@ -8,6 +8,11 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].bundle.js',
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   mode: 'production',
   plugins: [
     new HtmlWebpackPlugin({
@@ -38,7 +43,7 @@ module.exports = {
     ]
   },
   devServer: {
-    compress: true,
+    contentBase: './public',
     port: 8564,
   },
   mode: 'development',
