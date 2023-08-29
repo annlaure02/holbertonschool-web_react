@@ -1,0 +1,47 @@
+* {
+  margin: 3px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: "Gill Sans", sans-serif;;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  color: #de4444;
+  border-bottom: 4px solid #de4444;
+}
+
+.App-logo {
+  height: 250px;
+  pointer-events: none;
+}
+
+.App-header h1 {
+  font-size: 38px;
+}
+
+.App-body {
+  height: 450px;
+  margin: 60px 40px;
+}
+
+.App-body p {
+  font-size: 20px;
+}
+
+.App-footer {
+  display: flex;
+  justify-content: center;
+  border-top: 4px solid #da2323;
+  height: 80px;
+}
+
+.App-footer p {
+  font-style: italic;
+  margin-top: 15px;
+  font-size: 20px;
+}
