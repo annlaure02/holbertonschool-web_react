@@ -1,4 +1,27 @@
 .Notifications {
-  border: 2px solid #de4444;
-  padding: 10px;
+  border: thin dashed #de4444;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  font-size: 18px;
+}
+
+.Notifications ul {
+  padding-top: 15px;
+}
+
+.Notifications li {
+  margin-left: 50px;
+}
+
+.Notifications li[data-priority="default"] {
+  color: darkblue;
+}
+
+.Notifications li[data-priority="urgent"] {
+  color: red;
+}
+
+.Notifications ul:last-child li {
+  color: red;
 }
