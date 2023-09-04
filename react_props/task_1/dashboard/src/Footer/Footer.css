@@ -1,0 +1,12 @@
+.App-footer {
+  display: flex;
+  justify-content: center;
+  border-top: 4px solid #da2323;
+  height: 80px;
+}
+
+.App-footer p {
+  font-style: italic;
+  margin-top: 15px;
+  font-size: 20px;
+}
