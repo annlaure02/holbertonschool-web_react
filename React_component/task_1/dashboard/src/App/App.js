@@ -25,7 +25,7 @@ class App extends Component {
       { id: 2, type: 'urgent', value: 'New resume available' },
       { id: 3, html: { __html: getLatestNotification() } },
     ];
-    
+
     return (
       <>
         <div>
@@ -45,12 +45,14 @@ class App extends Component {
   }
 }
 
-App.defaultProps = {
-  isLoggedIn: false,
-}
-
 App.propTypes = {
   isLoggedIn: PropTypes.bool,
+  logOut: PropTypes.func,
+}
+
+App.defaultProps = {
+  isLoggedIn: false,
+  logOut: () => {},
 }
 
 export default App;
