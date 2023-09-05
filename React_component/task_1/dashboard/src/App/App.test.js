@@ -40,4 +40,14 @@ describe('test App', () => {
     expect(wrapper.contains(<Login />)).toBe(false);
     expect(wrapper.contains(<CourseList />)).toBe(true);
   });
+
+  it('logOut when the keys control and h are pressed', () => {
+    const logOut = jest.fn(() => undefined);
+    const wrapper = shallow(<App logOut={logOut} />);
+    const alert = jest.spyOn(global, 'alert');
+    expect(alert).toHaveBeenCalled();
+    expect(logOut).toHaveBeenCalledWith('Logging you out');
+
+    jest.restoreAllMocks();
+  });
 });
