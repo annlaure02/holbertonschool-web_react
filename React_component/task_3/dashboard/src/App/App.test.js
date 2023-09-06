@@ -4,6 +4,7 @@ import Login from '../Login/Login';
 import App from './App';
 import CourseList from '../CourseList/CourseList'
 import { shallow } from 'enzyme';
+import { expect, jest } from '@jest/globals';
 
 describe('test App', () => {
   it('App renders without crashing', () => {
@@ -50,6 +51,5 @@ describe('test App', () => {
 
     jest.restoreAllMocks();
   });
-
   
 });
