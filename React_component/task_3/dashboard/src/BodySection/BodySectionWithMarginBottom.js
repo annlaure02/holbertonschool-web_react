@@ -17,4 +17,9 @@ class BodySectionWithMarginBottom extends Component {
   }
 }
 
+BodySectionWithMarginBottom.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node,
+}
+
 export default BodySectionWithMarginBottom;

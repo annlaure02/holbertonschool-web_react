@@ -7,6 +7,8 @@ import Footer from '../Footer/Footer';
 import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
 import { getLatestNotification } from '../utils/utils';
+import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
+import BodySection from '../BodySection/BodySection';
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +23,7 @@ class App extends Component {
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleKeyPress)
   }
-  
+
   handleKeyPress(event) {
     if (event.ctrlKey && event.key === 'h') {
       alert('Logging you out');
@@ -50,10 +52,17 @@ class App extends Component {
         <div className="App">
           <Header />
           {isLoggedIn ? (
-            <CourseList listCourses={listCourses} />
+            <BodySectionWithMarginBottom title='Course list' >
+              <CourseList listCourses={listCourses} />
+            </BodySectionWithMarginBottom>
           ) : (
-            <Login />
+            <BodySectionWithMarginBottom title='Log in to continue' >
+              <Login />
+            </BodySectionWithMarginBottom>
           )}
+          <BodySection title='News from the School'>
+            <p>Random text in a paragraph</p>
+          </BodySection>
           <Footer />
         </div>
       </>
@@ -68,7 +77,7 @@ App.propTypes = {
 
 App.defaultProps = {
   isLoggedIn: false,
-  logOut: () => {},
+  logOut: () => { },
 }
 
 export default App;
