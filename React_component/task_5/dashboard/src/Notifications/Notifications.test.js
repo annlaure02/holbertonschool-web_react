@@ -1,6 +1,6 @@
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 describe('test Notifications', () => {
   it('Notifications renders without crashing', () => {
@@ -84,5 +84,41 @@ describe('test Notifications', () => {
     instance.markAsRead(123); 
     expect(consoleSpy).toHaveBeenCalledWith('Notification 123 has been marked as read');
     consoleSpy.mockRestore();
+  });
+
+  it('verify that when updating the props of the component with the same list, the component doesn’t rerender', () => {
+    const notifications = [
+      { id: 1, type: 'default', value: 'Notification 1' },
+      { id: 2, type: 'urgent', value: 'Notification 2' },
+    ];
+
+    const wrapper = mount(<Notifications displayDrawer={true} listNotifications={notifications} />);
+    const instance = wrapper.instance();
+    const renderCountBeforeUpdate = wrapper.find(NotificationItem).length;
+
+    wrapper.setProps({ displayDrawer: true, listNotifications: notifications });
+    const renderCountAfterUpdate = wrapper.find(NotificationItem).length;
+    expect(renderCountBeforeUpdate).toBe(renderCountAfterUpdate);
+  });
+
+  it('verify that when updating the props of the component with a longer list, the component does rerender', () => {
+    const initialNotifications = [
+      { id: 1, type: 'default', value: 'Notification 1' },
+      { id: 2, type: 'urgent', value: 'Notification 2' },
+    ];
+
+    const newNotifications = [
+      { id: 3, type: 'default', value: 'Notification 3' },
+      { id: 4, type: 'urgent', value: 'Notification 4' },
+      { id: 5, type: 'default', value: 'Notification 5' },
+    ];
+
+    const wrapper = mount(<Notifications displayDrawer={true} listNotifications={initialNotifications} />);
+    const instance = wrapper.instance();
+
+    const renderCountBeforeUpdate = wrapper.find(NotificationItem).length;
+    wrapper.setProps({ displayDrawer: true, listNotifications: newNotifications });
+    const renderCountAfterUpdate = wrapper.find(NotificationItem).length;
+    expect(renderCountBeforeUpdate).not.toBe(renderCountAfterUpdate);
   });
 });
