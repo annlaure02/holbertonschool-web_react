@@ -1,0 +1,32 @@
+.menuItem{
+  text-align: right;
+}
+
+.Notifications {
+  border: thin dashed #de4444;
+  padding: 20px 50px 20px 8px;
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+}
+
+.Notifications ul {
+  padding-top: 15px;
+}
+
+.Notifications li {
+  margin-left: 50px;
+}
+
+.Notifications li[data-priority="default"] {
+  color: darkblue;
+}
+
+.Notifications li[data-priority="urgent"] {
+  color: red;
+}
+
+.Notifications ul li:last-child  {
+  color: red;
+}
+
