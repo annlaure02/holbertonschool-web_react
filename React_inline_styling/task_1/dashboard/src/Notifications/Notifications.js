@@ -43,7 +43,7 @@ class Notifications extends Component {
           <p>Your notifications</p>
         </div>
         {displayDrawer &&
-          <div className={css(styles.notificationsPanel)} >
+          <div className={css(styles.notifications)} >
             <button
               style={buttonStyle}
               arial-label='Close'
@@ -80,7 +80,7 @@ class Notifications extends Component {
 }
 
 const styles = StyleSheet.create({
-  notificationsPanel: {
+  notifications: {
     border: 'thin dashed #de4444',
     padding: '20px 50px 20px 8px',
     position: 'absolute',
