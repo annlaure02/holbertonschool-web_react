@@ -1,0 +1,24 @@
+.menuItem{
+  text-align: right;
+}
+
+ul {
+  padding-top: 15px;
+}
+
+li {
+  margin-left: 50px;
+}
+
+li[data-priority="default"] {
+  color: darkblue;
+}
+
+li[data-priority="urgent"] {
+  color: red;
+}
+
+ul li:last-child  {
+  color: red;
+}
+
