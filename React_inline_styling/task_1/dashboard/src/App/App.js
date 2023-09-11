@@ -65,7 +65,9 @@ class App extends Component {
             <p>Random text in a paragraph</p>
           </BodySection>
         </div >
-        <Footer />
+        <div className={css(styles.footer)} >
+          <Footer />
+        </div>
       </>
     );
   }
@@ -77,6 +79,16 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     fontFamily: "Gill Sans"
   },
+  footer: {
+    display: 'flex',
+    justifyContent: 'center',
+    borderTop: '4px solid #da2323',
+    height: 80,
+    position: 'absolute',
+    bottom: 0,
+    width: '99%',
+    fontFamily: "Gill Sans",
+  }
 });
 
 App.propTypes = {

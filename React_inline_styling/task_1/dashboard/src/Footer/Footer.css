@@ -1,15 +1,4 @@
-.App-footer {
-  display: flex;
-  justify-content: center;
-  border-top: 4px solid #da2323;
-  height: 80px;
-  position: absolute;
-  bottom: 0;
-  width: 99%;
-  font-family: "Gill Sans", sans-serif;
-}
-
-.App-footer p {
+p {
   font-style: italic;
   margin-top: 15px;
   font-size: 20px;
