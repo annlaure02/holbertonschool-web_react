@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     marginLeft: 50,
     '@media (max-width: 900px)': {
 			width: '100%',
-			fontSize: '20px',
+			fontSize: 20,
       borderBottom: '1px solid black',
       listStyleType: 'none',
       padding: '10px 8px',
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     marginLeft: 50,
     '@media (max-width: 900px)': {
       width: '100%',
-      fontSize: '20px',
+      fontSize: 20,
       borderBottom: '1px solid black',
       listStyleType: 'none',
       padding: '10px 8px',
