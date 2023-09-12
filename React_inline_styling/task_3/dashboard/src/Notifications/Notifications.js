@@ -80,15 +80,15 @@ class Notifications extends Component {
 
 const styles = StyleSheet.create({
   notifications: {
-    boxSizing: 'border-box',
+    width: 600,
     border: 'thin dashed #de4444',
-    position: 'relative',
-		marginTop: '12px',
+    position: 'absolute',
+    right: 5,
+		marginTop: 8,
     fontSize: 18,
     fontStyle: 'normal',
     backgroundColor: 'white',
     '@media (max-width: 900px)': {
-      position: 'absolute',
       left: 0,
       border: 'none',
       width: '100%',
