@@ -42,7 +42,7 @@ class Notifications extends Component {
     return (
       <div>
         <div className={dislayMenuItem} onClick={handleDisplayDrawer} >
-          <p>Your notifications</p>
+          Your notifications
         </div>
         {displayDrawer &&
           <div className={css(styles.notifications)} >
