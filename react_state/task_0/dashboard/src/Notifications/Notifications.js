@@ -41,7 +41,7 @@ class Notifications extends Component {
 
     return (
       <div>
-        <div className={dislayMenuItem} onClick={handleDisplayDrawer} >
+        <div className={dislayMenuItem} onClick={() => handleDisplayDrawer()} >
           <p>Your notifications</p>
         </div>
         {displayDrawer &&
@@ -49,7 +49,7 @@ class Notifications extends Component {
             <button
               style={buttonStyle}
               arial-label='Close'
-              onClick={handleHideDrawer}>
+              onClick={() => handleHideDrawer()}>
               <img src={closeIcon} alt='Close Icon' height="10px"></img>
             </button>
             {listNotifications.length === 0 &&
@@ -151,7 +151,6 @@ const styles = StyleSheet.create({
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
   listNotifications: PropTypes.arrayOf(NotificationItemShape),
-  displayDrawer: PropTypes.bool,
   handleDisplayDrawer: PropTypes.func,
   handleHideDrawer: PropTypes.func
 }
@@ -159,7 +158,6 @@ Notifications.propTypes = {
 Notifications.defaultProps = {
   displayDrawer: false,
   listNotifications: [],
-  displayDrawer: false,
   handleDisplayDrawer: () => { },
   handleHideDrawer: () => { },
 }
