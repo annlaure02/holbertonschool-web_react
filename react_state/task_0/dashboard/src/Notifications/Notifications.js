@@ -42,7 +42,7 @@ class Notifications extends Component {
     return (
       <div>
         <div className={dislayMenuItem} onClick={handleDisplayDrawer} >
-          Your notifications
+          <p>Your notifications</p>
         </div>
         {displayDrawer &&
           <div className={css(styles.notifications)} >
@@ -151,6 +151,7 @@ const styles = StyleSheet.create({
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
   listNotifications: PropTypes.arrayOf(NotificationItemShape),
+  displayDrawer: PropTypes.bool,
   handleDisplayDrawer: PropTypes.func,
   handleHideDrawer: PropTypes.func
 }
@@ -158,6 +159,7 @@ Notifications.propTypes = {
 Notifications.defaultProps = {
   displayDrawer: false,
   listNotifications: [],
+  displayDrawer: false,
   handleDisplayDrawer: () => { },
   handleHideDrawer: () => { },
 }
