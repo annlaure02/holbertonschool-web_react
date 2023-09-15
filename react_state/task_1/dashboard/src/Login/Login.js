@@ -71,12 +71,12 @@ class Login extends Component {
             value={this.state.password}
             onChange={this.handleChangePassword}
           ></input>
-          <button
+          <input
             className={css(styles.btn)}
             type='submit'
-            value='Submit'
+            value='OK'
             disabled={!this.state.enableSubmit}
-          >OK</button>
+          ></input>
         </form>
       </div>
     )
