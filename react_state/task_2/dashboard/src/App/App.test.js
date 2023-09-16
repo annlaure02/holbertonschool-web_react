@@ -12,7 +12,7 @@ describe('test App', () => {
   beforeEach(() => {
     StyleSheetTestUtils.suppressStyleInjection();
   });
-  
+
   afterEach(() => {
     StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
   });
@@ -53,15 +53,15 @@ describe('test App', () => {
   });
 
   it('logOut when the keys control and h are pressed', () => {
-    const logOut = jest.fn(() => undefined);
-    const wrapper = shallow(<App logOut={logOut} />);
+    const wrapper = shallow(<App />);
     const alert = jest.spyOn(global, 'alert');
-    expect(alert).toHaveBeenCalled();
-    expect(logOut).toHaveBeenCalledWith('Logging you out');
+    wrapper.instance().handleKeyPress({ ctrlKey: true, key: 'h' });
+    expect(alert).toHaveBeenCalledWith('Logging you out');
+    expect(wrapper.state().user.isLoggedIn).toBe(false);
 
     jest.restoreAllMocks();
   });
-  
+
   it('verify that the default state for displayDrawer is false', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.state().displayDrawer).toBe(false);
@@ -79,4 +79,22 @@ describe('test App', () => {
     wrapper.instance().handleHideDrawer();
     expect(wrapper.state().displayDrawer).toBe(false);
   });
+
+  it('verify that the logIn function updates the state correctly', () => {
+    const wrapper = shallow(<App />);
+    wrapper.instance().logIn('test@example.com', '123456');
+    expect(wrapper.state().user.isLoggedIn).toBe(true);
+    expect(wrapper.state().user.email).toBe('test@example.com');
+    expect(wrapper.state().user.password).toBe('123456');
+  });
+
+  it('verify that the logOut function updates the state correctly', () => {
+    const wrapper = shallow(<App />);
+    wrapper.setState({ user: { isLoggedIn: true, email: 'test@example.com', password: '123456' } });
+    wrapper.instance().logOut();
+    expect(wrapper.state().user.isLoggedIn).toBe(false);
+    expect(wrapper.state().user.email).toBe('');
+    expect(wrapper.state().user.password).toBe('');
+  });
+
 });

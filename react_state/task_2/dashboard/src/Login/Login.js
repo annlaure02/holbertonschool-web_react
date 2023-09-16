@@ -14,9 +14,9 @@ class Login extends Component {
     this.handleChangePassword = this.handleChangePassword.bind(this);
   };
 
-  handleLoginSubmit() {
-    const { email, password } = this.state;
-    this.props.logIn(email, password);
+  handleLoginSubmit(event) {
+    event.preventDefault();
+    this.props.logIn(this.state.email, this.state.password);
   };
 
   handleChangeEmail(event) {

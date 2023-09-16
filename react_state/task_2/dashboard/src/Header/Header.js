@@ -8,8 +8,6 @@ class Header extends Component {
   constructor(props) {
     super(props);
   };
-
-  static contextType = AppContext;
   
   render() {
     const { user, logOut } = this.context;
@@ -26,6 +24,8 @@ class Header extends Component {
     )
   }
 }
+
+Header.contextType = AppContext;
 
 const styles = StyleSheet.create({
   header: {
