@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../assets/holberton-logo.jpg';
 import { StyleSheet, css } from 'aphrodite';
-import { user, logOut, AppContext } from '../App/AppContext';
+import { AppContext } from '../App/AppContext';
 
 
 class Header extends Component {
@@ -18,7 +18,7 @@ class Header extends Component {
         <img src={logo} className={css(styles.logo)} alt="logo" />
         <h1 className={css(styles.h1)}>School dashboard</h1>
         {user.isLoggedIn && 
-          <section id='logoutSection'>
+          <section id='logoutSection' className={css(styles.section)} >
             Welcome <b>{user.email}</b> <a href='#' onClick={logOut}>(logout)</a>
           </section>
         }
@@ -41,6 +41,10 @@ const styles = StyleSheet.create({
   h1: {
     fontSize: 38,
     color: '#de4444'
+  },
+  section: {
+    display: 'block',
+    marginLeft: 50,
   }
 })
 

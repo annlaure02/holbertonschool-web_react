@@ -6,7 +6,7 @@ const user = {
   isLoggedIn: false,
 };
 
-const logOut = () => { };
+const logOut = () => {};
 
 const AppContext = React.createContext(user, logOut)
 

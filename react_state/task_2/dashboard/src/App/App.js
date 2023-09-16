@@ -3,7 +3,6 @@ import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
-import PropTypes from 'prop-types';
 import CourseList from '../CourseList/CourseList';
 import { getLatestNotification } from '../utils/utils';
 import BodySectionWithMarginBottom from '../BodySection/BodySectionWithMarginBottom';
@@ -18,7 +17,7 @@ class App extends Component {
     this.state = {
       displayDrawer: false,
       user,
-      logOut,
+      logOut: () => this.logOut(),
     };
     this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
     this.handleHideDrawer = this.handleHideDrawer.bind(this);
@@ -37,7 +36,7 @@ class App extends Component {
   handleKeyPress(event) {
     if (event.ctrlKey && event.key === 'h') {
       alert('Logging you out');
-      this.state.logOut();
+      this.logOut();
     }
   }
 
@@ -77,7 +76,6 @@ class App extends Component {
     const {
       displayDrawer,
       user,
-      user: { isLoggedIn },
       logOut
     } = this.state
 
@@ -94,7 +92,7 @@ class App extends Component {
           </div>
           <Header />
           <div className={css(styles.body)}>
-            {isLoggedIn ? (
+            {user.isLoggedIn === true ? (
               <BodySectionWithMarginBottom title='Course list' >
                 <CourseList listCourses={listCourses} />
               </BodySectionWithMarginBottom>
@@ -133,9 +131,5 @@ const styles = StyleSheet.create({
     fontFamily: "Gill Sans",
   }
 });
-
-App.propTypes = {}
-
-App.defaultProps = {}
 
 export default App;
