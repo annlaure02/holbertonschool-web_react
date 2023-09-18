@@ -44,7 +44,7 @@ function Notifications({ displayDrawer }) {
   )
 }
 
-Notifications.PropTypes = {
+Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
 }
 

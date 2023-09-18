@@ -36,7 +36,7 @@ export default function CourseListRow({ isHeader, textFirstCell, textSecondCell 
 CourseListRow.propTypes = {
   isHeader: PropTypes.bool,
   textFirstCell: PropTypes.string.isRequired,
-  textSecondCell: PropTypes.string.isRequired,
+  textSecondCell: PropTypes.string,
 }
 
 CourseListRow.defaultProps = {

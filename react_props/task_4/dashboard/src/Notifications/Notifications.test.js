@@ -1,3 +1,4 @@
+import React from 'react';
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
 import { shallow } from 'enzyme';
@@ -8,19 +9,19 @@ describe('test Notifications', () => {
   });
 
   it('Notifications renders NotificationItem elements', () => {
-    const wrapper = shallow(<Notifications />);
-    expect(wrapper.find(<NotificationItem />)).to.have.lengthOf(3);
+    const wrapper = shallow(<Notifications displayDrawer={true} />);
+    expect(wrapper.find(NotificationItem)).toHaveLength(3);
   });
 
   it('Notifications renders NotificationItem elements', () => {
-    const wrapper = shallow(<Notifications />);
-    expect(wrapper.find(<NotificationItem />).first().html()).to.equal('<li data-priority="default">New course available</li>');
+    const wrapper = shallow(<Notifications displayDrawer={true}/>);
+    expect(wrapper.find(NotificationItem).first().html()).toEqual('<li data-priority="default">New course available</li>');
   });
 
   it('Notifications renders the text Here is the list of notifications', () => {
-    const wrapper = shallow(<Notifications />);
-    expect(wrapper.contains(<p>Here is the list of notifications</p>)).to.equal(true);
-  });
+    const wrapper = shallow(<Notifications displayDrawer={true} />);
+    expect(wrapper.contains(<p>Here is the list of notifications</p>)).toEqual(true);
+  })
 
   it('check that the menu item is being displayed when displayDrawer is false', () => {
     const wrapper = shallow(<Notifications displayDrawer={false} />);

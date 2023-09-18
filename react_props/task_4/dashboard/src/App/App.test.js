@@ -1,3 +1,5 @@
+import React from 'react';
+import Notifications from '../Notifications/Notifications';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
@@ -12,22 +14,22 @@ describe('test App', () => {
 
   it('App contain the Notifications component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists(<Notifications />)).to.equal(true);
+    expect(wrapper.contains(<Notifications />)).toEqual(true);
   });
 
   it('App contain the Header component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists(<Header />)).to.equal(true);
+    expect(wrapper.contains(<Header />)).toEqual(true);
   });
 
   it('App contain the Login component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists(<Login />)).to.equal(true);
+    expect(wrapper.contains(<Login />)).toEqual(true);
   });
 
   it('App contain the Footer component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists(<Footer />)).to.equal(true);
+    expect(wrapper.contains(<Footer />)).toEqual(true);
   });
 
   it('App check that CourseList is not displayed', () => {
