@@ -29,7 +29,7 @@ export default function CourseList({ listCourses }) {
   )
 };
 
-CourseList.PropTypes = {
+CourseList.propTypes = {
   listCourses: PropTypes.arrayOf(CourseShape),
 };
 
