@@ -49,16 +49,16 @@ function Notifications({ displayDrawer, listNotifications }) {
       }
     </>
   )
-}
+};
 
-Notifications.PropTypes = {
+Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
   listNotifications: PropTypes.arrayOf(NotificationItemShape),
-}
+};
 
 Notifications.defaultProps = {
   displayDrawer: false,
   listNotifications: [],
-}
+};
 
-export default Notifications
+export default Notifications;

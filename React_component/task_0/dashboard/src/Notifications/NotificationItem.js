@@ -8,7 +8,7 @@ export default function NotificationItem({type, value, html}) {
   return <li data-priority={type}>{value}</li>
 }
 
-NotificationItem.PropTypes = {
+NotificationItem.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string,
   html: PropTypes.shape({
