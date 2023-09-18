@@ -4,7 +4,7 @@ module.exports = {
   mode: "development",
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname,'../dist'),
+    path: path.resolve(__dirname, '../dist'),
     filename: 'bundle.js',
   },
   devServer: {
@@ -21,18 +21,9 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        type: 'asset/resource',
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true,
-              disable: true,
-            },
-          },
-        ]
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: 'asset/resource',
+				loader: 'image-webpack-loader',
       },
       {
         test: /\.(js|jsx)$/,

@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode development --config config/webpack.config.js",
-    "start": "webpack-dev-server --open --mode development --config config/webpack.config.js",
+    "start": "webpack serve --open --mode development --config config/webpack.config.js",
     "test": "jest",
-    "test-watch": "jest --watch",
-    "start-react": "react-scripts start"
+    "test-watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -35,6 +33,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -48,6 +47,18 @@
     },
     "setupFiles": [
       "<rootDir>/config/setupTests.js"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
