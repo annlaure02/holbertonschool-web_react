@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 class NotificationItem extends Component {
 
   render() {
-    const { type, value, html, markAsRead, id } = this.props;
+    let { type, value, html, markAsRead, id } = this.props;
 
     if (html) {
       return <li dangerouslySetInnerHTML={html} onClick={() => markAsRead(id)} ></li>
@@ -13,7 +13,7 @@ class NotificationItem extends Component {
   }
 }
 
-NotificationItem.PropTypes = {
+NotificationItem.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string,
   html: PropTypes.shape({

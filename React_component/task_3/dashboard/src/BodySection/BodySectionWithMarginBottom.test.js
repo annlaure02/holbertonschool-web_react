@@ -5,9 +5,12 @@ import BodySection from './BodySection';
 
 describe('BodySectionWithMarginBottom Component', () => {
   it('renders BodySection component with correct props', () => {
+    const title = "test title";
+    const children = <p>test children node</p>;
+    
     const wrapper = shallow(
-      <BodySectionWithMarginBottom title="test title">
-        <p>test children node</p>
+      <BodySectionWithMarginBottom title={title}>
+        {children}
       </BodySectionWithMarginBottom>
     );
     expect(wrapper.find(BodySection).exists()).toBe(true);

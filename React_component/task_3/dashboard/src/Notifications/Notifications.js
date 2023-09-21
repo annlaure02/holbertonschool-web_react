@@ -16,7 +16,7 @@ class Notifications extends Component {
   };
 
   render() {
-    const { displayDrawer, listNotifications } = this.props;
+    let { displayDrawer, listNotifications } = this.props;
 
     const buttonStyle = {
       diplay: 'inline',
@@ -71,7 +71,7 @@ class Notifications extends Component {
   }
 }
 
-Notifications.PropTypes = {
+Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
   listNotifications: PropTypes.arrayOf(NotificationItemShape),
 }

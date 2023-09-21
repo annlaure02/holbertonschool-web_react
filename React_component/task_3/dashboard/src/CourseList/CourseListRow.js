@@ -39,7 +39,7 @@ CourseListRow.propTypes = {
   textSecondCell: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
-  ]).isRequired,
+  ]),
 }
 
 CourseListRow.defaultProps = {
