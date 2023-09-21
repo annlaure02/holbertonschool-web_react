@@ -71,7 +71,7 @@ class Notifications extends Component {
   }
 }
 
-Notifications.PropTypes = {
+Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
   listNotifications: PropTypes.arrayOf(NotificationItemShape),
 }

@@ -13,7 +13,7 @@ class NotificationItem extends Component {
   }
 }
 
-NotificationItem.PropTypes = {
+NotificationItem.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string,
   html: PropTypes.shape({
